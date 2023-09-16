@@ -13,6 +13,7 @@ import android.os.Looper;
 import android.widget.Toast;
 
 import androidx.core.app.NotificationCompat;
+import androidx.core.graphics.drawable.IconCompat;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
@@ -36,7 +37,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
         // Also if you intend on generating your own notifications as a result of a received FCM
         // message, here is where that should be initiated. See sendNotification method below.
-        sendNotification( remoteMessage.getFrom(),remoteMessage.getNotification().getBody(), remoteMessage.getNotification().getTitle() );
+        sendNotification( remoteMessage.getFrom(),remoteMessage.getNotification().getBody(), remoteMessage.getNotification().getTitle());
         sendNotification(remoteMessage.getNotification().getBody(), remoteMessage.getNotification().getTitle());
     }
 
@@ -60,7 +61,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder notificationBuilder =
                 new NotificationCompat.Builder(this, channelId)
-                        .setSmallIcon(R.drawable.ic_stat_notification)
+                        .setSmallIcon(R.drawable.bb_logo)
                         .setContentTitle(messageTitle)
                         .setContentText(messageBody)
                         .setAutoCancel(true)
